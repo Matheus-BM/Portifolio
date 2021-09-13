@@ -1,0 +1,375 @@
+body,html{
+    background-color: rgb(22, 22, 22);
+    z-index: -2;
+    color: white;
+    font-family: sans-serif;
+    display:flex;
+    flex-flow: column;
+    margin:0;
+    padding:0;
+    width: 100vw;
+    scroll-behavior: smooth;
+}
+li,a{
+    text-decoration: none;
+    color: white;
+    display: inline;
+    margin: 1rem;
+}
+ul{padding: 0; justify-content: center;}
+header{
+    height: 120vh ;
+  
+}
+canvas{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.title {
+
+    pointer-events: none;
+    width: 100vw;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+
+}
+nav{
+    z-index: 1;
+    width: 100vw;
+    height: 0;
+    display: flex;
+    position: absolute;
+    top:2%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+nav li a{
+    transition: 1s;
+}
+nav li a:hover{
+    color: orange;
+}
+.title h1{
+    font-size: 64px;
+    margin: 0;
+}
+.title h2{
+    text-align: center;
+}
+::-webkit-scrollbar{
+    background-color: rgba(49, 49, 49, 0);
+    display: none;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgb(90, 90, 90);
+    border-radius: 20px;
+}
+
+
+.icon-scroll,
+.icon-scroll:before{
+   position: absolute;
+   left: 50%;
+}
+.icon-scroll{
+  width: 30px; 
+  height: 50px;
+  margin-left: -20px;
+  top: 60%;
+  margin-top: -35px;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+}
+.icon-scroll:before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  margin-left: -4px;
+  top: 8px;
+  border-radius: 4px;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-name: scroll;
+}
+
+
+
+/* Section Main */
+
+#about{
+    transform: skewY(11deg);
+    background-color: rgb(54, 54, 54);
+ height: 90vh;
+ width: 100vw;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ text-align: start;
+}
+#about a {
+    margin: 0;
+}
+
+#about .box{
+    opacity: 0;
+    transition: 5s;
+    transform: skewY(-11deg);
+    display: flex;
+    flex-direction:column ;
+    width: 70%;
+    padding: 3em;
+    padding-top: 1em;
+    border-radius: 10px;
+}
+#about .info{
+    width: 50%;
+}
+#about img[data-src]{
+    border-radius: 5px;
+    opacity: 0;
+    transition: 2s;
+    top: 10px;
+    transform: skewY(-11deg);
+    border-radius: 150px;
+}
+
+#about img[src]{
+    opacity: 100;
+    z-index: 1;
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 60%;
+    top: 136px;
+    
+}
+
+/*Section Portifolio*/
+ #portifolio{
+     margin-top: 8rem;
+
+}
+#portifolio .stickyContainer{
+    width: 100%;
+    position: sticky;
+    top: 150px;
+    overflow: hidden;
+}
+#portifolio .stickyContainer h1{
+    text-align: center;
+}
+
+
+#portifolio .projContainer{
+    position: relative;
+    display: flex;
+    flex-flow: row nowrap;
+    margin: 20px;
+    margin-left: 200px;
+}
+.prj{
+    width: 500px;
+    height: 400px;
+    margin: 20px;
+    flex-shrink: 0;
+    background-color: orange;
+    transition: 1s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+.prj img{
+
+    width: 70%;
+    height: 50%;
+    border-radius: 20px;
+}
+.prj .btn{
+    border: none;
+    margin-bottom: 1em;
+}
+.prj .btn.coming, .prj .btn.coming:hover{
+    background-color: grey;
+    cursor:default;
+}
+
+.prj:hover, .prj:active{
+    transform: scale(1.1);
+
+}
+/* Technologies */
+#tech{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#tech div{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#tech i{
+    font-size: 5em;
+}
+
+/*  Contact */
+#contact{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#contact h1{
+    margin-top: 2em;
+}
+#contact div form{
+    display: flex;
+    flex-direction: column;
+}
+#contact ul {
+    margin: 1em;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+.fab.fa-github, .fab.fa-linkedin{
+    font-size: 36px;
+    transition: 1s;
+}
+.fab.fa-github:hover,.fab.fa-github:focus,.fab.fa-linkedin:hover,.fab.fa-linkedin:focus{
+    color: orange;
+}
+
+.form-control{
+    margin-bottom: 3em;
+    background-color: rgba(68, 67, 67, 0.418);
+    border-radius: 10px;
+    padding: 1em;
+    transition: 1s;
+}
+.form-control::placeholder{
+    color: white;
+}
+.form-control:focus{
+    outline: none;
+    transform: scale(1.2);
+
+}
+input, textarea{
+    color: white;
+    resize: none;
+}
+ .btn{
+    background-color: rgb(54, 54, 54);
+    color: white;
+    margin: 0 auto;
+    margin-bottom: 5em;
+    padding: 1em;
+    border-radius: 50px;
+    width: fit-content;
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+
+/*Footer*/
+footer{
+    display: flex;
+    justify-content: center;
+    width: 100VW;
+}
+footer div{
+    width: 205PX;
+}
+
+@keyframes scroll{
+  0%{
+    opacity: 1;
+  }100%{
+    opacity: 0;
+    transform: translateY(26px);
+  }
+}
+@media only screen and (max-width: 600px) {
+    header nav{
+        visibility: hidden;
+    }
+    .icon-scroll{
+        top: 80%;
+    }
+    header .title h1{
+        font-size: 42px;
+    }
+    header .title h2{
+        font-size: 16px;
+    }
+    
+    #about{
+        height: 90vh;
+        display: flex;
+        flex-flow:column;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+    }
+    
+    #about .box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        flex-direction:column ;
+        width: 70vw;
+        background-color: rgba(90, 90, 90, 0);
+        padding: 2em;
+        padding-top: 1em;
+        border-radius: 10px;
+    }
+
+
+    #about img[src]{
+        position: static;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        left:0;
+        top:0;
+    }
+    #portifolio .stickyContainer{
+        top: 100px;
+
+    }
+    .prj{
+        width: 320px;
+        margin: 8px;
+
+    }
+    #tech i{
+        font-size: 3em;
+    }
+    #tech div{
+        text-align: center;
+        width: 80vh;
+    }
+}
+
+@media only screen and (min-width: 2000px) {
+   #about .box{
+        width: 40%;
+    }
+}
